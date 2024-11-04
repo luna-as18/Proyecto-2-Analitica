@@ -13,7 +13,7 @@ from dotenv import load_dotenv
 import os
 import psycopg2
 
-env_path = "/Users/gabrielacorrea/Desktop/Elementos-despliegue/proyecto.env"
+env_path = "elementos-despliegue/proyecto.env"
 load_dotenv(dotenv_path=env_path)
 
 # extract env variables
@@ -42,11 +42,11 @@ server = app.server
 
 # cargar archivo de disco
 
-model = keras.models.load_model('/Users/gabrielacorrea/Desktop/Elementos-despliegue/modelo_pls_lda.keras')
-file_data = '/Users/gabrielacorrea/Desktop/Elementos-despliegue/bank-full.csv'
+model = keras.models.load_model('elementos-despliegue/modelo_pls_lda.keras')
+file_data = 'elementos-despliegue/bank-full.csv'
 df = pd.read_csv(file_data, sep=';')
-data = pd.read_csv("/Users/gabrielacorrea/Desktop/Elementos-despliegue/data_dummies.csv", sep=';')
-scaler = joblib.load("/Users/gabrielacorrea/Desktop/Elementos-despliegue/escalador.pkl")
+data = pd.read_csv("elementos-despliegue/data_dummies.csv", sep=';')
+scaler = joblib.load("elementos-despliegue/escalador.pkl")
 
 valores_validos = {
     "job": ["admin", "unknown", "unemployed", "management", "housemaid", "entrepreneur", "student",
